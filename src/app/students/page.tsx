@@ -53,6 +53,11 @@ const students = [
     name: "Joshua Sherrard",
     img: "/images/joshua/headshot.png",
   },
+  {
+    id: "mathias-laven",
+    name: "Mathias Laven",
+    img: "/images/mathias/headshot.jpg",
+  },
 ];
 
 const StudentsPage: React.FC = () => {
