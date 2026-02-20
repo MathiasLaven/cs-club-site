@@ -48,7 +48,11 @@ public/oss-licenses.json
 commit.bat
 run.bat
 
-cdn-build
-
 # Local Netlify folder
 .netlify
+
+.dev.vars
+
+cloudflare-env.d.ts
+
+.open-next

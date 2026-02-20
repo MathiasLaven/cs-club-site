@@ -1,0 +1,105 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "routes": [
+    {
+      "pattern": "unwcsclub.dev",
+      "custom_domain": true,
+    },
+  ],
+  "main": ".open-next/worker.js",
+  "name": "cs-club-site",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+  "preview_urls": true,
+  "d1_databases": [
+    {
+      "binding": "NEXT_TAG_CACHE_D1",
+      "database_name": "cs-club-site-cache",
+      "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+    },
+    {
+      "binding": "NEXT_INC_CACHE_D1",
+      "database_name": "cs-club-site-cache",
+      "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+    },
+    {
+      "binding": "DB",
+    },
+  ],
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "cs-club-site",
+    },
+  ],
+  "env": {
+    "production": {
+      "name": "cs-club-site",
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "80385cad895446bdb9c35a0e5435e778",
+        },
+      ],
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "cs-club-site",
+        },
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cs-club-site-db",
+          "database_id": "3bbbb244-2854-410a-8021-995bc6d9296a",
+        },
+        {
+          "binding": "NEXT_TAG_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+        },
+        {
+          "binding": "NEXT_INC_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+        },
+      ],
+    },
+    "preview": {
+      "name": "cs-club-site",
+      "kv_namespaces": [
+        {
+          "binding": "NEXT_INC_CACHE_KV",
+          "id": "80385cad895446bdb9c35a0e5435e778",
+        },
+      ],
+      "services": [
+        {
+          "binding": "WORKER_SELF_REFERENCE",
+          "service": "cs-club-site",
+        },
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cs-club-site-db-preview",
+          "database_id": "ba6b9f60-4d5b-4152-98dc-8eea432ea4f2",
+        },
+        {
+          "binding": "NEXT_TAG_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+        },
+        {
+          "binding": "NEXT_INC_CACHE_D1",
+          "database_name": "cs-club-site-cache",
+          "database_id": "9c244aa6-37dc-4836-a55c-ec2a3c339408",
+        },
+      ],
+    },
+  },
+}
