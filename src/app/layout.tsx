@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
+import { WillChangeMotionValue } from "motion/react";
 
 export const metadata: Metadata = {
   title: "UNW CS Club",
